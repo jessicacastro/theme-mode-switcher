@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
+
+:root {
+  --black: #000000;
+  --dark: #292C35;
+	--light: #F1F1F1;
+	--label: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+a, a:visited, a:hover, a:active {
+  /* Primeiro passo: definir um degradê como fundo */
+  background-image: linear-gradient(to right, rgb(15, 144, 230), rgb(4, 187, 92));
+  
+  /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+  background-clip: text;
+  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+
+  /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+  -webkit-text-fill-color: transparent;
+
+  /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+  color: black;
+}
+
+button { 
+  border: none; 
+}
+
+input { 
+  outline: none; 
+}
+
+
+main { 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+main h3 { 
+  margin-bottom: 20px;
+}
+
+main p:first-of-type {
+  margin: 30px 0px 8px 0px;
+}
+
+main p {
+  max-width: 600px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 72px;
+  height: 40px;
+}
+
+.switch img {
+  width: 3em;
+  height: 3em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--black);
+  -webkit-transition: .4s;
+  transition: .4s;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider img {
+  width: 1.7em;
+  height: 1.7em;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 33px;
+  width: 33px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--dark)
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
