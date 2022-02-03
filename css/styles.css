@@ -139,3 +139,17 @@ footer p {
   text-align: center;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  main {
+    padding: 0 25px;
+  }
+
+  main h3 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+}
