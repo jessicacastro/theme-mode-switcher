@@ -44,7 +44,7 @@ main {
   flex-direction: column;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
 }
 
 main h3 { 
@@ -127,4 +127,15 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+footer {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  text-align: center;
+  width: 100%;
 }
